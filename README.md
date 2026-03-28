@@ -6,8 +6,9 @@
 
 ---
 
-## 回答核心问题：为什么不需要复制 RNA-FM 文件夹？
+## 需要借用一部分 RNA-FM 文件夹！
 
+我们的项目默认是：
 ```
 文件结构：
 ├── RhoFold-main/          <-- RNA-FM 已在这里
@@ -18,34 +19,13 @@
     ├── 所有代码文件...
 ```
 
-**简单说：代码里用 `sys.path` 告诉 Python "去 ../RhoFold-main 找 RNA-FM"，所以不需要复制。**
+**代码里用 `sys.path` 告诉 Python "去 ../RhoFold-main 找 RNA-FM"，所以不需要复制。**
 
 这样的好处：
 1. 不重复代码
 2. RhoFold 更新时不需要重新复制
 3. 项目更整洁
 
----
-
-## 文件清单
-
-| 文件名 | 作用 | 状态 |
-|---------|------|------|
-| __init__.py | Python 包文件 | ✅ |
-| README.md | 详细使用说明 | ✅（最新版） |
-| requirements.txt | 依赖库列表 | ✅ |
-| config.py | 配置文件（含服务器/本地自动检测） | ✅ |
-| utils.py | 工具函数（随机种子、数据加载等） | ✅ |
-| promoter_predictor.py | 核心模型（基于 RNA-FM） | ✅ |
-| data_loader.py | 数据加载器（含批量读取） | ✅（已更新） |
-| train.py | 第一阶段训练脚本 | ✅（已更新） |
-| fine_tune.py | 第二阶段微调脚本 | ✅（已更新） |
-| predict.py | 预测脚本 | ✅ |
-| test_imports.py | 环境测试脚本 | ✅ |
-| json_to_fasta.py | JSON 转 FASTA 工具 | ✅（新增） |
-| server_scripts/run_on_server.py | 服务器一键运行脚本 | ✅（新增） |
-
----
 
 ## 服务器运行模式
 
